@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="HotWaterReturnNetworkCalculator.View.UserControls.MenuBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotWaterReturnNetworkCalculator.View.UserControls"
+             mc:Ignorable="d" 
+             Height="70" d:DesignWidth="800">
+    <Grid >
+        <Grid.RowDefinitions>
+            <!--menu bar-->
+            <RowDefinition Height="30"/>
+            <!--icons bar-->
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <!--File menue-->
+            <MenuItem Header="File">
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <!--Edit menue-->
+            <MenuItem Header="Edit">
+                <MenuItem Header="Undo"/>
+                <MenuItem Header="Redo"/>
+                <MenuItem Header="Select Rows"/>
+                <MenuItem Header="Copy"/>
+                <MenuItem Header="Paste"/>
+                <MenuItem Header="Delete"/>
+            </MenuItem>
+            <!--Help menue-->
+            <MenuItem Header="Help">
+                <MenuItem Header="Documentation"/>
+                <MenuItem Header="About"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Button 
+            Name ="addPipe"
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left"
+            Margin="5,5,0,5" 
+            Height="25" 
+            Width="100"
+            Click="addPipe_Click"
+            >
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Add Pipe" Grid.Column="0"/>
+                        <Image Source="../../src/icons8-pipe-96.png" Width="24" Height="24" Grid.Column="1"/>
+                    </Grid>
+                </StackPanel>
+            </Button>
+                
+                
+            <Button 
+            Content="Edit Pipe" 
+            Name ="editPipe"
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left"
+            Margin="120,5,0,5" 
+            Height="25" 
+            Width="100"
+            Click="editPipe_Click"
+            />
+            <Button 
+            Content="Delete Pipe" 
+            Name ="deletePipe"
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left"
+            Margin="230,5,0,5"
+            Height="25" 
+            Width="100"
+            Click="deletePipe_Click"
+            />
+
+            <Button 
+            Content="Calculate" 
+            Name="button_toggle"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Right"
+            Height="25" Width="80"
+            Click="button_toggle_Click" 
+            Margin="0,5,130,5"
+            />
+            <Button 
+            Content="Save" 
+            Name="button_Save"
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Right"
+            Margin="0,5,70,5"
+            Height="25" 
+            Width="50"
+            Click="button_Save_Click"
+            />
+            <Button 
+            Content="Exit" 
+            Name="button_Exit"
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Right"
+            Margin="0,5,10,5"
+            Height="25" Width="50"
+            
+            />
+            
+        </Grid>
+
+    </Grid>
+</UserControl>
