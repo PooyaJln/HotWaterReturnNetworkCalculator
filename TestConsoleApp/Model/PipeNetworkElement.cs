@@ -1,6 +1,4 @@
-﻿using HotWaterReturnNetworkCalculator.Model;
-
-namespace TestConsoleApp.Model
+﻿namespace TestConsoleApp.Model
 {
     public abstract class PipeNetworkElement
     {

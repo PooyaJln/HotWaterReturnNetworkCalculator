@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotWaterReturnNetworkCalculator", "HotWaterReturnNetworkCalculator\HotWaterReturnNetworkCalculator.csproj", "{4C37737B-9ED4-4539-81E8-04813598BA43}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{F57F69FC-A7F2-486A-B1DF-E9C6D89D542C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4C37737B-9ED4-4539-81E8-04813598BA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C37737B-9ED4-4539-81E8-04813598BA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C37737B-9ED4-4539-81E8-04813598BA43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F57F69FC-A7F2-486A-B1DF-E9C6D89D542C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F57F69FC-A7F2-486A-B1DF-E9C6D89D542C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F57F69FC-A7F2-486A-B1DF-E9C6D89D542C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F57F69FC-A7F2-486A-B1DF-E9C6D89D542C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
