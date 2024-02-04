@@ -9,16 +9,19 @@ namespace TestConsoleApp.Model
     public class ReturnPoint : PipeNetworkElement
     {
         private static int idSeed = 1001;
+        public List<int> ParentsIdList;
         public static event Action<ReturnPoint> ReturnPointCreated;
 
         public ReturnPoint()
         {
             Id = idSeed;
             ParentsList = new List<Pipe>();
+            ParentsIdList = new List<int>();
             ReturnPointCreated?.Invoke(this);
             idSeed++;
-
         }
+
+
         public override double HeatLoss()
         {
             double TotalHeatLoss = 0.0;
@@ -28,8 +31,6 @@ namespace TestConsoleApp.Model
             }
             return TotalHeatLoss;
         }
-
-
-        
+               
     }
 }

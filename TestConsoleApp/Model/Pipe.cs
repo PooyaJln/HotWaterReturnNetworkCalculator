@@ -12,15 +12,17 @@
         public double HeatLossPerMeter { get; set; }
 
         public List<ReturnPoint> ChildrenList { get; set; }
+        public List<int> ChildrenIdList { get; set; }
 
         public Pipe()
         {
-            Id = idSeed;
+            //Id = idSeed;
             HeatLossPerMeter = 10.0;
             ChildrenList = new List<ReturnPoint>();
+            ChildrenIdList = new List<int>();
             ParentsList = new List<Pipe>();
             PipeCreated?.Invoke(this);
-            idSeed++;
+            //idSeed++;
         }
 
         public override double HeatLoss()
