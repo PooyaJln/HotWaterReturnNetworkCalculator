@@ -33,12 +33,14 @@ namespace TestConsoleApp
             Pipe pipe1 = new Pipe();
             pipe1.Id = 1;
             pipe1.Length = 1;
+            pipe1.HeatLossPerMeter = 1;
             
 
             Pipe pipe2 = new Pipe();
             pipe2.Id = 2;
             pipe2.Length = 2;
             pipe2.ParentId = pipe1.Id;
+            pipe2.HeatLossPerMeter = 2;
             
             Pipe pipe4 = new Pipe();
             pipe4.Id = 4;
@@ -152,7 +154,7 @@ namespace TestConsoleApp
                 }
             }
 
-            void populateParentsIdList(ReturnPoint returnPoint)
+            void PopulateParentsIdList(ReturnPoint returnPoint)
             {
                 foreach (Pipe pipe in returnPoint.ParentsList)
                 {
@@ -175,24 +177,31 @@ namespace TestConsoleApp
                 Console.WriteLine();
             }
 
-            foreach (PipeNetworkElement element in PipeNetworkElements)
-            {
-                Console.WriteLine($"the Element {element.Id} type is '{element.GetType().Name}' and its parent id is {element.ParentId}");
-            }
+            //foreach (PipeNetworkElement element in PipeNetworkElements)
+            //{
+            //    Console.WriteLine($"the Element {element.Id} type is '{element.GetType().Name}' and its parent id is {element.ParentId}");
+            //}
 
             foreach (ReturnPoint returnPoint in ReturnPoints)
             {
                 PopulateParentList(returnPoint, returnPoint.ParentsList);
-                populateParentsIdList(returnPoint);
+                PopulateParentsIdList(returnPoint);
                 PopulatePipeChildrenList(returnPoint);
-                Console.WriteLine($"returnPoint {returnPoint.Id}'s parent list has {returnPoint.ParentsList.Count} members");
-                printList(returnPoint.ParentsIdList);
             }
 
             foreach (Pipe pipe in Pipes)
             {
-                Console.WriteLine($"the Pipe {pipe.Id} supplies {pipe.ChildrenList.Count} return points and those are:");
+                Console.WriteLine($"the Pipe {pipe.Id}'s heatLossPerMeter is {pipe.HeatLossPerMeter} and it supplies {pipe.ChildrenList.Count} return points and those are:");
                 printList(pipe.ChildrenIdList);
+                Console.WriteLine();
+            }
+
+            foreach (ReturnPoint returnPoint in ReturnPoints)
+            {
+                Console.WriteLine($"returnPoint {returnPoint.Id}'s parents list has {returnPoint.ParentsList.Count} members");
+                printList(returnPoint.ParentsIdList);
+                Console.WriteLine($"the Element {returnPoint.Id}'s heatLoss is {returnPoint.HeatLoss()}");
+                Console.WriteLine();
             }
 
             //Pipe GetParentPipe(PipeNetworkElement element, List<Pipe> list)

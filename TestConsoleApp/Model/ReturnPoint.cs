@@ -24,12 +24,12 @@ namespace TestConsoleApp.Model
 
         public override double HeatLoss()
         {
-            double TotalHeatLoss = 0.0;
+            double TotalHeatLoss = 0;
             foreach (Pipe pipe in ParentsList)
             {
-                TotalHeatLoss += pipe.HeatLossPerMeter / pipe.ChildrenList.Count;
+                TotalHeatLoss += 2 * pipe.Length * pipe.HeatLossPerMeter / pipe.ChildrenList.Count;
             }
-            return TotalHeatLoss;
+            return Math.Floor(TotalHeatLoss*100)/100;
         }
                
     }
